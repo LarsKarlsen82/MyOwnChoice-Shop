@@ -1,0 +1,149 @@
+// Define standard variables and values for the website
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+// Colors
+$LightBrowncolor: #A56661;
+$LightBluecolor: #83B0B2;
+$Gold: #D8C176;
+$Black: #262624;
+$LightGrey: #707070;
+$Cream: #f1f1f1;
+$White: #FFFFFF;
+
+// Styles
+$TW24: 24pt;
+$TWplain: 20pt;
+$TWprice: 27pt;
+$TWproduct: 30pt;
+$TWcat: 30pt;
+$TWlogo: 35pt;
+
+// Apply the font to the body
+body {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: $Black;
+    margin: 0; // Remove default margin
+    padding: 0; // Remove default padding
+}
+
+// Styles for the header
+header {
+    position: fixed; // Fix the header position
+    top: 0; // Align the header to the top
+    left: 0;
+    right: 0;
+    z-index:2; // Set a high z-index to keep it on top
+    background-color: $Black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+// Add styles for the logo container and logo
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.logo-container h1{
+    font-size: $TWprice;
+    font-weight: 800;
+}
+.logo {
+    color: $White;
+    font-size: $TWcat;
+}
+.logo-link {
+    position: absolute;
+    color: $Cream;
+    top: 50%; // Center the link vertically
+    transform: translateY(-50%);
+    right: 100px; // Adjust the positioning as needed
+    z-index: 3;
+    padding: 5px; // Add padding for better visibility
+    text-decoration: none;
+    border-radius: 5px; // Add border-radius for rounded corners
+}
+i {
+    font-size: 35px; // Adjust the font size as needed
+}
+
+// Hamburger icon styles
+.menu-btn {
+    max-width: 430px; // Set the maximum width
+    max-height: 852px; // Set the maximum height
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-right: 20px;
+
+    .bar {
+        width: 30px;
+        height: 4px;
+        border-radius: 4px;
+        background-color: $White;
+        transition: all 0.3s ease-in-out;
+    }
+
+    // Change the hamburger icon when the menu is active
+    &.active {
+        .bar:nth-of-type(1) {
+            transform: translateY(12.5px) rotate(-45deg);
+           
+        }
+
+        .bar:nth-of-type(2) {
+            opacity: 0;
+          
+        }
+
+        .bar:nth-of-type(3) {
+            transform: translateY(-12.5px) rotate(45deg);
+    
+        }
+    }
+}
+
+// Sliding menu styles
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    background: $Black;
+    transform: translateX(100%);
+    transition: transform 0.5s;
+    z-index: 1; // Set a z-index to overlay the content
+
+    &.active {
+        transform: translateX(0);
+    }
+
+    .nav__list {
+        list-style-type: none;
+        padding-top: 110px;
+        padding-left: 10px;
+
+    .nav__list_item {
+        height: 30px; // Set a specific height for each item (adjust as needed)
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    
+
+        .nav__link {
+            text-decoration: none;
+            color: $White;
+            font-size: $TWplain;
+            &:hover {
+                color: $LightBrowncolor;
+            }
+        }
+    }
+}
+}
