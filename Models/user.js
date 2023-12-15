@@ -1,25 +1,18 @@
-// models/user.js
-const { DataTypes } = require('sequelize');
-const sequelize = require('../db'); // Assuming your Sequelize connection is in a file named db.js
+const { Sequelize, DataTypes } = require('sequelize');
+const { sequelize } = require('../db'); // Correct import path based on your project structure
 
 const User = sequelize.define('User', {
-  UserID: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true,
-  },
-  Username: {
+  // Define your model attributes here
+  username: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  Email: {
+  email: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: true,
   },
-  CreationDate: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW,
-  },
+  // Add more attributes as needed
 });
 
 module.exports = User;

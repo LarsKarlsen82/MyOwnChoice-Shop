@@ -1,8 +1,8 @@
 // routes.js
 const express = require('express');
 const router = express.Router();
-const productController = require('./Controllers/productController.js');
-const userController = require('./Controllers/userController.js');
+const productController = require('../Controllers/productController.js');
+const userController = require('../Controllers/userController.js');
 
 // Product Endpoints
 router.get('/products', productController.getAllProducts);

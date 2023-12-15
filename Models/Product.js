@@ -1,7 +1,7 @@
 // modeller/Product.js
-const { DataTypes } = require('sequelize');
-const sequelize = require('../db'); // Stien skal være korrekt afhængigt af din projektstruktur
-Product.belongsTo(Category);
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = require('../db');
+
 
 const Product = sequelize.define('Product', {
   productName: {
