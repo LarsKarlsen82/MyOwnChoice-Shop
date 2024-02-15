@@ -56,5 +56,5 @@ app.listen(PORT, async () => {
     console.error('Unable to connect to the database:', error);
   }
 
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server kører på http://localhost:${PORT}`);
 });
